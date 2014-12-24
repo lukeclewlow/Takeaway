@@ -26,4 +26,8 @@ describe Menu do
 		expect{menu.add_or_modify_item(:Pasta, 4)}.to change{menu.price?(:Pasta)}.by -3
 	end
 
+	it 'should be able to return item and price for addition to baskets' do
+		expect(menu.add_to_basket(:Pasta)).to eq(:Pasta => 7)
+	end
+
 end

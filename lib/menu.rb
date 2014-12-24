@@ -2,6 +2,7 @@ class Menu
 
 	def initialize
 		@listing = {:Pasta => 7}
+		@order = {}
 	end
 
 	def listing_count
@@ -17,7 +18,12 @@ class Menu
 	end
 
 	def price?(item)
-		@listing[item]
+		@listing.fetch(item)
 	end
 
-end
+	def add_to_basket(item)
+		price = self.price?(item)
+		@order.merge!(item => price)
+	end
+
+end	
