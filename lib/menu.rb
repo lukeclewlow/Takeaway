@@ -1,7 +1,7 @@
 class Menu
 
 	def initialize
-		@listing = {:Pasta => 7}
+		@listing = {:Pasta => 7, :Chicken => 9}
 		@order = {}
 	end
 
