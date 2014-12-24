@@ -8,8 +8,8 @@ class Customer
 		@basket.length
 	end
 
-	def add_item(item)
-		
+	def add_item(menu, item)
+		@basket.merge!(menu.add_to_basket(item))
 	end
 
 end
