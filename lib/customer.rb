@@ -20,4 +20,16 @@ class Customer
 		@basket.values.inject(:+)
 	end	
 
+	def finalize_basket
+		self.finalize
+	end
+
+	def finalize
+		true
+	end
+
+	def complete_basket
+		@basket
+	end
+
 end

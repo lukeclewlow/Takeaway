@@ -30,4 +30,8 @@ describe Menu do
 		expect(menu.add_to_basket(:Pasta)).to eq(:Pasta => 7)
 	end
 
+	it 'should be able to show a list of everything available on the menu and the relevant prices' do
+
+	end
+
 end
