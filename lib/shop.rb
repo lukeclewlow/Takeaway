@@ -4,9 +4,6 @@ class Shop
 		@finalized_order = {}
 	end
 
-	def incoming_order
-	end
-
 	def receive_order(order)
 		@finalized_order = order
 	end
@@ -14,6 +11,5 @@ class Shop
 	def finalized_order
 		@finalized_order.length
 	end
-
 
 end

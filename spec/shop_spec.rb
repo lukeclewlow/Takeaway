@@ -14,9 +14,6 @@ describe 'Shop' do
 			expect{shop.receive_order(customer.complete_basket)}.to change{shop.finalized_order}.by(1)
 		end
 
-		
+		xit 'should be able to 	'
 
-
-
-	
 end
