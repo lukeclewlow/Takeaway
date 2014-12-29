@@ -21,7 +21,7 @@ The customer should be able to add and remove items to their basket and finalize
 
 The shop should then be able to check the price is as expected and if so text the customer to let them know their order was successful.
 
-Shop
+####Shop
 ====
 
 Responsibilities     | Collaborators 
@@ -31,7 +31,7 @@ Create text message  | Customer
                      | Message
                      
 
-Menu
+####Menu
 ====
 
 Responsibilities     | Collaborators 
@@ -40,7 +40,8 @@ List dishes          | Customer
 Add dishes           | Customer
 Remove dishes        | Customer
 
-Customer
+
+####Customer
 =======
 
 Responsibilities     | Collaborators 
