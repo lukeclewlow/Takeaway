@@ -25,7 +25,7 @@ describe 'Shop' do
 			customer.add_order(menu, :Pasta)
 			customer.finalize_basket
 			shop.receive_order(customer.complete_basket)
-			expect()
+			expect(shop.confirm_order_with_customer).to 
 		end
 
 

@@ -1,4 +1,6 @@
-class Shop
+require_relative 'message'
+
+class Shop	
 
 	def initialize
 		@finalized_order = {}
