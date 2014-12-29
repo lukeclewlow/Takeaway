@@ -1,5 +1,7 @@
 require 'rubygems' # not necessary with ruby 1.9 but included for completeness 
 require 'twilio-ruby' 
+
+module Twilio
  
 # put your own credentials here 
 account_sid = 'AC5a201b62fd6c321fd2c552df32896e27' 

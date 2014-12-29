@@ -1,0 +1,7 @@
+require './lib/menu.rb'
+require './lib/customer.rb'
+require './lib/shop.rb'
+menu = Menu.new
+customer = Customer.new
+shop = Shop.new
+customer.add_order(menu, :Pasta)
