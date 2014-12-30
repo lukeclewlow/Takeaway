@@ -1,6 +1,9 @@
 require_relative 'message'
+require 'twilio-ruby' 
 
-class Shop	
+class Shop
+
+	include Message	
 
 	def initialize
 		@finalized_order = {}
@@ -16,6 +19,10 @@ class Shop
 
 	def confirm_price(customer)
 		true if customer.basket_total_cost == @finalized_order.values.inject(:+)
+	end
+
+	def send_message
+		self.send_text
 	end
 
 end

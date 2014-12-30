@@ -32,7 +32,7 @@ class Customer
 		@basket
 	end
 
-	def send_finalized_order_to_shop(shop, basket)
+	def send_finalized_order_to_shop(shop=shop, basket=customer.complete_basket)
 		# if finalize == true
 			shop.receive_order(basket)
 		# else p "Not in stock"

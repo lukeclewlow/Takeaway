@@ -1,7 +1,10 @@
 require './lib/menu.rb'
 require './lib/customer.rb'
 require './lib/shop.rb'
+require './lib/message.rb'
 menu = Menu.new
 customer = Customer.new
 shop = Shop.new
 customer.add_order(menu, :Pasta)
+customer.send_finalized_order_to_shop(shop, customer.complete_basket)
+
