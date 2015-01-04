@@ -20,16 +20,15 @@ describe 'Shop' do
 			expect{shop.receive_order(customer.complete_basket, menu.order_prices)}.to change{shop.finalized_order}.by(1)
 		end
 
-		xit 'should be able to confirm price and ask customer to confirm this' do
-			customer.add_order(menu, :Pasta)
+		it 'should be able to confirm price and ask customer to confirm this' do
+			customer.add_order(menu, :Pasta, 3)
 			customer.finalize_basket
 			shop.receive_order(customer.complete_basket, menu.order_prices)
-			expect(shop.confirm_price(customer)).to eq(true)
+			expect(shop.confirm_price(customer, menu)).to eq(true)
 		end
 
 		xit 'should be able to text customer to let them know order is successful' do
 			expect(shop2.stub(:send_text).and_return("Message sent...")).to eq("Message sent...")
 		end
-
 
 end

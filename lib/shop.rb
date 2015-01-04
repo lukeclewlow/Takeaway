@@ -17,12 +17,16 @@ class Shop
 		@finalized_order.length
 	end
 
-	def confirm_price(customer)
-		true if customer.basket_total_cost == @finalized_order.values.inject(:+)
+	def price
+		@finalized_order.values.inject(:+)
+	end
+
+	def confirm_price(customer, menu)
+		true if customer.basket_total_cost(menu) == price
 	end
 
 	def send_message
 		self.send_text
 	end
 
-end
+end	

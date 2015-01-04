@@ -6,5 +6,9 @@ menu = Menu.new
 customer = Customer.new
 shop = Shop.new
 customer.add_order(menu, :Pasta, 3)
+customer.add_order(menu, :Chicken, 3)
+customer.finalize_basket
+shop.receive_order(customer.complete_basket, menu.order_prices)
+shop.send_message
 
 

@@ -5,8 +5,7 @@ require 'twilio-ruby'
 	module Message
 
 		def create_message
-			message = @finalized_order.keys.each do |key| print "#{key}, "
-			end
+			@finalized_order.keys.each { |key| p "#{key}, " }
 		end
 			
 		def send_text	 
@@ -15,7 +14,7 @@ require 'twilio-ruby'
 			@client.account.messages.create({
 				:from => '+441442796256', 
 				:to => '+447856953621', 
-				:body => "You have ordered: _________ which comes to a total of &#163;______",  
+				:body => "You have ordered: #{create_message} which comes to a total of £#{price}",  
 			})
 			p "Message sent..."
 		end

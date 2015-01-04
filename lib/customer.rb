@@ -1,3 +1,9 @@
+class UnfinalizedOrder < Exception
+	def message
+		"Order has not been finalized"
+	end
+end
+
 class Customer
 
 	def initialize
@@ -34,10 +40,10 @@ class Customer
 	end
 
 	def send_finalized_order_to_shop(shop=shop, basket=customer.complete_basket)
-		# if finalize == true
+		if finalize == true #finalize always true at the moment!!!
 			shop.receive_order(basket)
-		# else p "Not in stock"
-		# end
+		else raise UnfinalizedOrder
+		end
 	end
 
 end
