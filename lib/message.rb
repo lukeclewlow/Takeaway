@@ -17,7 +17,7 @@ require 'twilio-ruby'
 				:to => '+447856953621', 
 				:body => "You have ordered: _________ which comes to a total of &#163;______",  
 			})
-			p "hi	"
+			p "Message sent..."
 		end
 
 	end

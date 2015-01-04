@@ -13,8 +13,8 @@ describe Customer do
 	end
 
 	it 'should be able to add items to the basket' do
-		customer.add_order(menu, :Pasta)
-		expect(customer.basket_size).to eq(1)
+		customer.add_order(menu, :Pasta, 2)
+		expect(customer.basket_size).to eq(2)
 	end
 
 	it 'should be able to remove items from basket' do
@@ -26,7 +26,7 @@ describe Customer do
 	it 'should be able to calculate total cost of order' do 
 		customer.add_order(menu, :Pasta)
 		customer.add_order(menu, :Chicken)
-		expect(customer.basket_total_cost).to eq(16)
+		expect(customer.basket_total_cost(menu)).to eq(16)
 	end
 
 	it 'should be able to finalize an order' do

@@ -1,23 +1,24 @@
 class Customer
 
 	def initialize
-		@basket = {}
+		@basket = []
 	end
 
 	def basket_size
 		@basket.length
 	end
 
-	def add_order(menu, item)
-		@basket.merge!(menu.add_to_basket(item.to_sym))
+	def add_order(menu, item, quantity=1)
+		menu.add_prices_to_array(item.to_sym, quantity)
+		quantity.times{@basket << menu.add_to_basket(item.to_sym, quantity)}
 	end
 
 	def remove_order(item)
 		@basket.delete(item)
 	end
 
-	def basket_total_cost
-		@basket.values.inject(:+)
+	def basket_total_cost(menu)
+		menu.calculate_price
 	end	
 
 	def finalize_basket

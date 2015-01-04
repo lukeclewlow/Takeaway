@@ -9,8 +9,8 @@ class Shop
 		@finalized_order = {}
 	end
 
-	def receive_order(order)
-		@finalized_order.merge!(order)
+	def receive_order(order, prices)
+		@finalized_order = Hash[order.uniq.zip(prices)]
 	end
 
 	def finalized_order

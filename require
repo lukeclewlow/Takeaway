@@ -5,6 +5,6 @@ require './lib/message.rb'
 menu = Menu.new
 customer = Customer.new
 shop = Shop.new
-customer.add_order(menu, :Pasta)
-customer.send_finalized_order_to_shop(shop, customer.complete_basket)
+customer.add_order(menu, :Pasta, 3)
+
 

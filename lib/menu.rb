@@ -5,7 +5,12 @@ class Menu
 
 		def initialize
 			@listing = {:Pasta => 7, :Chicken => 9}
-			@order = {}
+			@order = []
+			# @order2 = []
+		end
+
+		def order_prices
+			@order
 		end
 
 		def listing_count
@@ -24,10 +29,25 @@ class Menu
 			@listing.fetch(item)
 		end
 
-		def add_to_basket(item)
-			price = self.price?(item)
-			@order.merge!(item => price)
+		def add_to_basket(item, quantity=1)
+			item if @listing.has_key?(item)
 		end
+
+		def add_prices_to_array(item, quantity=1)
+			order2 = []	
+			order2 << (@listing[item]*quantity)
+			order3 = order2.uniq
+			@order.concat(order3)
+		end
+
+		def calculate_price
+			@order.inject(:+)
+		end
+
+		# def add_to_basket(item)
+		# 	price = self.price?(item)
+		# 	@order.merge!(item => price)
+		# end
 
 		def show_all_items
 			@listing.each{ | item, price | puts "#{item}: #{price}" }
