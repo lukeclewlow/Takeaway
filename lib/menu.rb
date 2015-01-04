@@ -37,6 +37,10 @@
 			order3 = order2.uniq ; @order.concat(order3)
 		end
 
+		def remove_prices_from_array(item, quantity=1)
+			@order.delete(@listing[item]*quantity)
+		end
+
 		def calculate_price
 			@order.inject(:+)
 		end

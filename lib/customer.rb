@@ -19,8 +19,13 @@ class Customer
 		quantity.times{@basket << menu.add_to_basket(item.to_sym, quantity)}
 	end
 
-	def remove_order(item)
-		@basket.delete(item)
+	def remove_order(menu, item, quantity=1)
+		@basket.delete(item) unless self.remove_prices(menu, item, quantity) == nil
+		
+	end
+
+	def remove_prices(menu, item, quantity=1)
+		menu.remove_prices_from_array(item.to_sym, quantity)
 	end
 
 	def basket_total_cost(menu)

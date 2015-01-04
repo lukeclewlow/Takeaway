@@ -19,7 +19,7 @@ describe Customer do
 
 	it 'should be able to remove items from basket' do
 		customer.add_order(menu, :Pasta)
-		customer.remove_order(:Pasta)
+		customer.remove_order(menu, :Pasta)
 		expect(customer.basket_size).to eq 0
 	end
 
