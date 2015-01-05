@@ -28,7 +28,8 @@ describe 'Shop' do
 		end
 
 		it 'should be able to text customer to let them know order is successful' do
-			expect(shop2.stub(:send_text).and_return("Message sent...")).to eq("Message sent...")
+			allow(shop2).to receive(:send_text).and_return("Message sent...")
+			expect(shop2.send_text).to eq("Message sent...")
 		end
 
 
