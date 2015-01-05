@@ -29,4 +29,8 @@ class Shop
 		self.send_text
 	end
 
+	def confirm_order
+		send_message if confirm_price == true
+	end
+	
 end	

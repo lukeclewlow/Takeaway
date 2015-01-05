@@ -21,7 +21,6 @@ class Customer
 
 	def remove_order(menu, item, quantity=1)
 		@basket.delete(item) unless self.remove_prices(menu, item, quantity) == nil
-		
 	end
 
 	def remove_prices(menu, item, quantity=1)
