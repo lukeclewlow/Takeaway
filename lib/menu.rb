@@ -33,8 +33,7 @@
 		end
 
 		def add_prices_to_array(item, quantity=1)
-			order2 = []	; order2 << (@listing[item]*quantity)
-			order3 = order2.uniq ; @order.concat(order3)
+			@order << (@listing[item]*quantity)
 		end
 
 		def remove_prices_from_array(item, quantity=1)

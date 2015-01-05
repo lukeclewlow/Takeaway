@@ -26,11 +26,11 @@ class Shop
 	end
 
 	def send_message
-		self.send_text
+		self.send_text create_message
 	end
 
 	def confirm_order
 		send_message if confirm_price == true
 	end
-	
+
 end	

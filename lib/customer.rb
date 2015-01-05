@@ -1,8 +1,8 @@
-class UnfinalizedOrder < Exception
-	def message
-		"Order has not been finalized"
-	end
-end
+# class UnfinalizedOrder < Exception
+# 	def message
+# 		"Order has not been finalized"
+# 	end
+# end
 
 class Customer
 
@@ -20,12 +20,9 @@ class Customer
 	end
 
 	def remove_order(menu, item, quantity=1)
-		@basket.delete(item) unless self.remove_prices(menu, item, quantity) == nil
+		@basket.delete(item) unless remove_prices(menu, item, quantity) == nil
 	end
 
-	def remove_prices(menu, item, quantity=1)
-		menu.remove_prices_from_array(item.to_sym, quantity)
-	end
 
 	def basket_total_cost(menu)
 		menu.calculate_price
@@ -44,10 +41,16 @@ class Customer
 	end
 
 	def send_finalized_order_to_shop(shop=shop, basket=customer.complete_basket)
-		if finalize == true #finalize always true at the moment!!!
+		# if finalize == true #finalize always true at the moment!!!
 			shop.receive_order(basket)
-		else raise UnfinalizedOrder
-		end
+		# else raise UnfinalizedOrder
+		# end
+	end
+
+private
+
+	def remove_prices(menu, item, quantity=1)
+		menu.remove_prices_from_array(item.to_sym, quantity)
 	end
 
 end
