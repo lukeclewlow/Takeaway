@@ -1,5 +1,7 @@
 require 'rubygems' # not necessary with ruby 1.9 but included for completeness 
 require 'twilio-ruby' 
+require './ACCOUNT_SID'
+require './AUTH_TOKEN'
 # require 'lib/shop.rb'
 
 	module Message
@@ -9,7 +11,7 @@ require 'twilio-ruby'
 		end
 			
 		def send_text	 
-			@client = Twilio::REST::Client.new 'AC5a201b62fd6c321fd2c552df32896e27' , 'a874b2a3a986714f11f4b424192852f0'
+			@client = Twilio::REST::Client.new ACCOUNT_SID, AUTH_TOKEN
 
 			@client.account.messages.create({
 				:from => '+441442796256', 

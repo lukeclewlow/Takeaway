@@ -27,8 +27,10 @@ describe 'Shop' do
 			expect(shop.confirm_price(customer, menu)).to eq(true)
 		end
 
-		xit 'should be able to text customer to let them know order is successful' do
+		it 'should be able to text customer to let them know order is successful' do
 			expect(shop2.stub(:send_text).and_return("Message sent...")).to eq("Message sent...")
 		end
+
+
 
 end
