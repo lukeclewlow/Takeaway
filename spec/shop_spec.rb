@@ -10,8 +10,9 @@ describe 'Shop' do
 	let (:menu) {Menu.new}
 	# shop.send_message(:true)
 
-		it 'should initialize with an empty order' do
-			expect(shop.finalized_order).to eq(0)
+		it 'should initialize with an empty order' do #is this compltely pointless (it certainly seems so)
+			allow(shop2).to receive(:finalized_order).and_return(0)
+			expect(shop2.finalized_order).to eq(0)
 		end
 
 		it 'should be able to receive a finalized order from the customer' do
