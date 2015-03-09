@@ -5,7 +5,7 @@ describe Menu do
 	let(:menu) {Menu.new}
 
 		it 'should be able to hold a list with at least one item and its price' do
-			expect(menu.listing_count).to eq(3)
+			expect(menu.listing_count).to eq(5)
 		end
 
 		it 'should be able to return a price when given an item' do
@@ -13,7 +13,7 @@ describe Menu do
 		end
 
 		it 'should be able to be added to' do
-			expect{menu.add_or_modify_item(:Salmon, 15)}.to change{menu.listing_count}.by 1
+			expect{menu.add_or_modify_item(:Soup, 15)}.to change{menu.listing_count}.by 1
 		end
 
 		it 'should be able to have an item removed' do
